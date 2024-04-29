@@ -21,7 +21,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('myapp.urls')),
     path('about', include('myapp.urls')),
-    path('my_games', include('games.urls')),
+    path('my_games/', include('games.urls')),
     path('coin', include('games.urls')),
     path('dice', include('games.urls')),
     path('random', include('games.urls')),
