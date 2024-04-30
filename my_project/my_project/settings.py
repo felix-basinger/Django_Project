@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'myapp',
     'games',
     'myapp2',
+    'hwapp2',
 ]
 
 MIDDLEWARE = [
