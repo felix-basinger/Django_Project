@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block title %}Список заказанных товаров{% endblock %}
+
+{% block content %}
+<h1>Товары, заказанные {{ client.name }}</h1>
+    {% for period, products in products_with_dates.items %}
+        <h2>{% if period == 'week' %}
+                За последнюю неделю
+            {% elif period == 'month' %}
+                За последний месяц
+            {% else %}
+                За последний год
+            {% endif %}
+        </h2>
+        <ul>
+            {% for product, dates in products.items %}
+                <li>{{ product.name }} - Цена: {{ product.price }}
+                    <ul>
+                        {% for date in dates %}
+                            <li>Заказан: {{ date|date:"d M Y" }}</li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% empty %}
+                <li>В этот период товары не заказывались.</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+{% endblock %}
+
