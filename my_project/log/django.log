@@ -1505,3 +1505,373 @@ django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 13: 'e
 "GET /products/ HTTP/1.1" 200 1366
 "GET /clients/ HTTP/1.1" 200 1750
 "GET /client/1/products/ HTTP/1.1" 200 4059
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 830
+"GET / HTTP/1.1" 200 830
+"GET /clients/ HTTP/1.1" 200 1750
+"GET /products/ HTTP/1.1" 200 1366
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 830
+"GET /clients/ HTTP/1.1" 200 1750
+"GET /products/ HTTP/1.1" 200 1366
+"GET /products/ HTTP/1.1" 200 1366
+"GET /clients/ HTTP/1.1" 200 1750
+Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Django/my_project/hwapp3/views.py", line 13, in index
+    return render(request, 'hwapp3/index.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/template/loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/template/defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/urls/resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'products_form' not found. 'products_form' is not a valid view function or pattern name.
+"GET / HTTP/1.1" 500 133349
+"GET / HTTP/1.1" 200 909
+"GET /product/add HTTP/1.1" 200 1613
+/Users/mac/Desktop/Django/my_project/hwapp3/forms.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET /product/add HTTP/1.1" 200 1613
+"GET / HTTP/1.1" 200 909
+"GET /product/add HTTP/1.1" 200 1613
+Internal Server Error: /product/add
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view hwapp3.views.product_form didn't return an HttpResponse object. It returned None instead.
+"POST /product/add HTTP/1.1" 500 61602
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 909
+"GET /product/add HTTP/1.1" 200 1652
+Internal Server Error: /product/add
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 204, in _get_response
+    self.check_response(response, callback)
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 332, in check_response
+    raise ValueError(
+ValueError: The view hwapp3.views.product_form didn't return an HttpResponse object. It returned None instead.
+"POST /product/add HTTP/1.1" 500 61631
+/Users/mac/Desktop/Django/my_project/hwapp3/views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /product/add HTTP/1.1" 200 1772
+"POST /product/add HTTP/1.1" 200 1772
+"POST /product/add HTTP/1.1" 200 1772
+"GET / HTTP/1.1" 200 909
+"GET /product/add HTTP/1.1" 200 1652
+/Users/mac/Desktop/Django/my_project/hwapp3/forms.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /product/add HTTP/1.1" 200 1893
+"POST /product/add HTTP/1.1" 200 2076
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 909
+"GET /product/add HTTP/1.1" 200 1893
+"POST /product/add HTTP/1.1" 200 2044
+/Users/mac/Desktop/Django/my_project/hwapp3/forms.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /products/ HTTP/1.1" 200 1445
+"GET /product/add HTTP/1.1" 200 1677
+/Users/mac/Desktop/Django/my_project/hwapp3/forms.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 909
+"GET /product/add HTTP/1.1" 200 1677
+/Users/mac/Desktop/Django/my_project/hwapp3/forms.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /product/add HTTP/1.1" 200 1677
+"GET /products/ HTTP/1.1" 200 1445
+"GET /product/add HTTP/1.1" 200 1677
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 909
+"GET /product/add HTTP/1.1" 200 1677
+/Users/mac/Desktop/Django/my_project/hwapp3/forms.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /products/ HTTP/1.1" 200 1445
+"GET /product/add HTTP/1.1" 200 1851
+"GET /product/add HTTP/1.1" 200 1851
+/Users/mac/Desktop/Django/my_project/hwapp3/forms.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /product/add HTTP/1.1" 200 1848
+/Users/mac/Desktop/Django/my_project/hwapp3/forms.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /product/add HTTP/1.1" 200 1851
+"POST /product/add HTTP/1.1" 200 1985
+/Users/mac/Desktop/Django/my_project/hwapp3/views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /product/add HTTP/1.1" 200 1985
+"GET /product/add HTTP/1.1" 200 1851
+"GET /clients/ HTTP/1.1" 200 1829
+"GET /product/add HTTP/1.1" 200 1851
+"POST /product/add HTTP/1.1" 200 1987
+/Users/mac/Desktop/Django/my_project/hwapp3/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /clients/ HTTP/1.1" 200 1829
+"GET /product/add HTTP/1.1" 200 1851
+"GET /clients/ HTTP/1.1" 200 1829
+"GET /product/add HTTP/1.1" 200 1851
+"GET /product/add HTTP/1.1" 200 1851
+"POST /product/add HTTP/1.1" 200 1981
+/Users/mac/Desktop/Django/my_project/hwapp3/forms.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /products/ HTTP/1.1" 200 1445
+Internal Server Error: /product/add
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Django/my_project/hwapp3/views.py", line 71, in product_form
+    form = ProductForm()
+           ^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/forms/models.py", line 360, in __init__
+    raise ValueError("ModelForm has no model class specified.")
+ValueError: ModelForm has no model class specified.
+"GET /product/add HTTP/1.1" 500 65299
+Internal Server Error: /product/add
+Traceback (most recent call last):
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Django/my_project/hwapp3/views.py", line 71, in product_form
+    form = ProductForm()
+           ^^^^^^^^^^^^^
+  File "/Users/mac/Desktop/Django/venv/lib/python3.11/site-packages/django/forms/models.py", line 360, in __init__
+    raise ValueError("ModelForm has no model class specified.")
+ValueError: ModelForm has no model class specified.
+"GET /product/add HTTP/1.1" 500 65299
+/Users/mac/Desktop/Django/my_project/hwapp3/forms.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /product/add HTTP/1.1" 200 1851
+"POST /product/add HTTP/1.1" 200 1979
+/Users/mac/Desktop/Django/my_project/hwapp3/views.py changed, reloading.
+Watching for file changes with StatReloader
+/Users/mac/Desktop/Django/my_project/hwapp3/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /products/ HTTP/1.1" 200 1445
+"GET /product/add HTTP/1.1" 200 1851
+"POST /product/add HTTP/1.1" 200 1973
+/Users/mac/Desktop/Django/my_project/hwapp3/forms.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 909
+"GET /product/add HTTP/1.1" 200 1830
+"POST /product/add HTTP/1.1" 200 1956
+/Users/mac/Desktop/Django/my_project/hwapp3/forms.py changed, reloading.
+"GET /clients/ HTTP/1.1" 200 1829
+Watching for file changes with StatReloader
+"GET /product/add HTTP/1.1" 200 1881
+"POST /product/add HTTP/1.1" 200 1941
+"GET /products/ HTTP/1.1" 200 1501
+"GET /product/add HTTP/1.1" 200 1881
+/Users/mac/Desktop/Django/my_project/hwapp3/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /product/add HTTP/1.1" 200 1879
+"POST /product/add HTTP/1.1" 200 1980
+/Users/mac/Desktop/Django/my_project/hwapp3/views.py changed, reloading.
+Watching for file changes with StatReloader
+"POST /product/add HTTP/1.1" 200 1991
+"GET /products/ HTTP/1.1" 200 1691
+"GET /products/ HTTP/1.1" 200 1808
+"GET /clients/ HTTP/1.1" 200 1829
+"GET /products/ HTTP/1.1" 200 1808
+/Users/mac/Desktop/Django/my_project/hwapp3/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /products/ HTTP/1.1" 200 1808
+"GET /products/ HTTP/1.1" 200 1808
+"GET /clients/ HTTP/1.1" 200 1829
+"GET /products/ HTTP/1.1" 200 1808
+Watching for file changes with StatReloader
+"GET /products/ HTTP/1.1" 200 1808
+"GET /products/ HTTP/1.1" 200 1808
+"GET /products/ HTTP/1.1" 200 1808
+"GET /products/ HTTP/1.1" 200 1808
+"GET /products/ HTTP/1.1" 200 1808
+"GET /products/ HTTP/1.1" 200 1808
+"GET /clients/ HTTP/1.1" 200 1829
+"GET /products/ HTTP/1.1" 200 1808
+Watching for file changes with StatReloader
+"GET /products/ HTTP/1.1" 200 1808
+"GET /products/ HTTP/1.1" 200 1808
+"GET /products/ HTTP/1.1" 200 1808
+"GET /products/ HTTP/1.1" 200 1808
+"GET /products/ HTTP/1.1" 200 1808
+"GET /products/ HTTP/1.1" 200 1808
+"GET /products/ HTTP/1.1" 200 1808
+"GET /products/ HTTP/1.1" 200 1808
+"GET /products/ HTTP/1.1" 200 1808
+"GET /products/ HTTP/1.1" 200 1808
+"GET /products/ HTTP/1.1" 200 1808
+"GET /products/ HTTP/1.1" 200 1808
+"GET /products/ HTTP/1.1" 200 1808
+"GET /products/ HTTP/1.1" 200 1808
+"GET /products/ HTTP/1.1" 200 1808
+"GET /products/ HTTP/1.1" 200 1808
+"GET /products/ HTTP/1.1" 200 1808
+"GET /products/ HTTP/1.1" 200 1808
+"GET / HTTP/1.1" 200 909
+"GET /products/ HTTP/1.1" 200 1808
+"GET /product/add HTTP/1.1" 200 1879
+"GET /products/ HTTP/1.1" 200 1808
+Watching for file changes with StatReloader
+"GET /products/ HTTP/1.1" 200 1808
+"GET /admin/ HTTP/1.1" 302 0
+"GET /admin/login/?next=/admin/ HTTP/1.1" 200 4158
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2682
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+"GET /static/admin/css/login.css HTTP/1.1" 200 958
+"GET /static/admin/css/base.css HTTP/1.1" 200 21544
+"GET /static/admin/js/theme.js HTTP/1.1" 200 1943
+"GET /static/admin/css/responsive.css HTTP/1.1" 200 17905
+"POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+"GET /admin/ HTTP/1.1" 200 5533
+"GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+/Users/mac/Desktop/Django/my_project/my_project/urls.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 909
+"GET /products/ HTTP/1.1" 200 1808
+/Users/mac/Desktop/Django/my_project/hwapp3/admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/ HTTP/1.1" 200 7021
+"GET /admin/hwapp3/product/ HTTP/1.1" 200 13406
+"GET /static/admin/css/changelists.css HTTP/1.1" 200 6811
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+"GET /static/admin/js/actions.js HTTP/1.1" 200 8067
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+"GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+"GET /static/admin/js/core.js HTTP/1.1" 200 6208
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9042
+"GET /static/admin/js/filters.js HTTP/1.1" 200 978
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+"GET /admin/hwapp3/product/13/change/ HTTP/1.1" 200 11672
+"GET /static/admin/css/forms.css HTTP/1.1" 200 9090
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+"GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/css/widgets.css HTTP/1.1" 200 11800
+"POST /admin/hwapp3/product/13/change/ HTTP/1.1" 302 0
+"GET /admin/hwapp3/product/ HTTP/1.1" 200 13645
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+"GET / HTTP/1.1" 200 909
+"GET /products/ HTTP/1.1" 200 1970
+"GET /media/products/3D-podium-with-interior-lighting-on-transparent-background-PNG.png HTTP/1.1" 200 56644
+"GET /product/add HTTP/1.1" 200 1879
+"POST /product/add HTTP/1.1" 200 1980
+"GET /products/ HTTP/1.1" 200 2063
+"GET /media/products/3D-podium-with-interior-lighting-on-transparent-background-PNG.png HTTP/1.1" 304 0
+"GET /admin/ HTTP/1.1" 200 7442
+"GET /admin/hwapp3/product/ HTTP/1.1" 200 13746
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/hwapp3/product/14/change/ HTTP/1.1" 200 11667
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+/Users/mac/Desktop/Django/my_project/hwapp3/views.py changed, reloading.
+Watching for file changes with StatReloader
+"GET / HTTP/1.1" 200 909
+"GET /product/add HTTP/1.1" 200 1879
+"POST /product/add HTTP/1.1" 200 1945
+"GET /products/ HTTP/1.1" 200 2120
+"GET /media/products/3D-podium-with-interior-lighting-on-transparent-background-PNG.png HTTP/1.1" 304 0
+/Users/mac/Desktop/Django/my_project/my_project/settings.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /products/ HTTP/1.1" 200 2120
+"GET /media/products/3D-podium-with-interior-lighting-on-transparent-background-PNG.png HTTP/1.1" 304 0
+"GET /products/ HTTP/1.1" 200 2120
+"GET /media/products/3D-podium-with-interior-lighting-on-transparent-background-PNG.png HTTP/1.1" 304 0
+"GET /product/add HTTP/1.1" 200 1909
+"POST /product/add HTTP/1.1" 200 1977
+"GET /products/ HTTP/1.1" 200 2350
+"GET /media/products/3D-podium-with-interior-lighting-on-transparent-background-PNG_bwsyBFs.png HTTP/1.1" 200 56644
+"GET /products/ HTTP/1.1" 200 2478
+"GET /media/products/3D-podium-with-interior-lighting-on-transparent-background-PNG.png HTTP/1.1" 304 0
+"GET /media/products/3D-podium-with-interior-lighting-on-transparent-background-PNG_bwsyBFs.png HTTP/1.1" 304 0
+"GET /admin/ HTTP/1.1" 200 7442
+"GET /admin/hwapp3/product/ HTTP/1.1" 200 14414
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/hwapp3/product/ HTTP/1.1" 200 8982
+"GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+"POST /admin/hwapp3/product/ HTTP/1.1" 302 0
+"GET /admin/hwapp3/product/ HTTP/1.1" 200 12532
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET / HTTP/1.1" 200 909
+"GET /product/add HTTP/1.1" 200 1909
+"POST /product/add HTTP/1.1" 200 2035
+"GET /products/ HTTP/1.1" 200 1890
+"GET /media/products/0140f3cd_286c_11ea_8086_fcaa145d5838_7580c5f0_cc36_11ea_489b_005056bdce03.jpg HTTP/1.1" 200 75760
+"GET /products/ HTTP/1.1" 200 1846
+"GET /media/products/0140f3cd_286c_11ea_8086_fcaa145d5838_7580c5f0_cc36_11ea_489b_005056bdce03.jpg HTTP/1.1" 304 0
+"GET /product/add HTTP/1.1" 200 1909
+"GET /products/ HTTP/1.1" 200 1846
+"GET /media/products/0140f3cd_286c_11ea_8086_fcaa145d5838_7580c5f0_cc36_11ea_489b_005056bdce03.jpg HTTP/1.1" 304 0
+"GET /product/add HTTP/1.1" 200 1909
+"GET /product/add HTTP/1.1" 200 1909
+"POST /product/add HTTP/1.1" 200 2008
+"GET /products/ HTTP/1.1" 200 2186
+"GET /media/products/set-of-floor-lamps-in-3d-room-lamp-isolated-on-white-background-realistic-vecto_iYZ3DbP.jpg HTTP/1.1" 200 11711
+"GET /media/products/0140f3cd_286c_11ea_8086_fcaa145d5838_7580c5f0_cc36_11ea_489b_005056bdce03.jpg HTTP/1.1" 304 0

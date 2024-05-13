@@ -7,7 +7,10 @@
 <h1>Товары</h1>
 <ul>
     {% for product in products %}
-     <h4>{{ product.name }} - {{ product.description }} - {{ product.price}}$</h4>
+     <h4>{{ product.name }} - {{ product.description }} - {{ product.price }}$</h4>
+    {% if product.image %}
+            <img style="max-width: 300px; max-height: 300px; object-fit: cover;" src="{{ product.image.url }}" class="card-img-top img-fluid" alt="{{ product.name }}">
+        {% endif %}
     {% endfor %}
 </ul>
 

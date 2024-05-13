@@ -1,7 +1,14 @@
+import logging
+
+from django.core.files.storage import FileSystemStorage
 from django.shortcuts import render
 from django.utils import timezone
 from datetime import timedelta
+
+from .forms import ProductForm
 from .models import Order, Client, Product
+
+logger = logging.getLogger(__name__)
 
 
 def index(request):
@@ -44,3 +51,18 @@ def client_products(request, client_id):
 def all_products(request):
     products = Product.objects.all()
     return render(request, 'hwapp3/products.html', {'products': products})
+
+
+def product_form(request):
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES)
+        message = 'Заполните форму ещё раз'
+        if form.is_valid():
+            new_product = form.save(commit=False)
+            new_product.save()
+            message = 'Товар успешно добавлен'
+    else:
+        form = ProductForm()
+        message = 'Добавьте товар'
+    return render(request, 'hwapp3/product_form.html',
+                  {'form': form, 'message': message})
