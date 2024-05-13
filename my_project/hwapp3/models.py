@@ -9,19 +9,20 @@ class Client(models.Model):
     register_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'Client: {self.name}, email: {self.email}, phone: {self.phone}'
+        return self.name
 
 
 class Product(models.Model):
     name = models.CharField(max_length=150)
     description = models.TextField()
     price = models.DecimalField(max_digits=8, decimal_places=2)
-    count = models.IntegerField()
+    count = models.PositiveSmallIntegerField(default=0)
     image = models.ImageField(upload_to='products/', blank=True, null=True)
     add_time = models.DateTimeField(auto_now_add=True)
+    rating = models.DecimalField(default=5.0, max_digits=3, decimal_places=2)
 
     def __str__(self):
-        return f'Product: {self.name}, price: {self.price}, count: {self.count}'
+        return self.name
 
 
 class Order(models.Model):
@@ -31,4 +32,4 @@ class Order(models.Model):
     date_ordered = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f'Customer ID: {self.customer}, product ID: {self.products}'
+        return f'{self.customer}'
