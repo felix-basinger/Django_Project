@@ -84,7 +84,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'felixbasinger$delfaut',
         'USER': 'felixbasinger',
-        'PASSWORD': os.getenv('Fel96396597'),
+        'PASSWORD': os.getenv('MYSQL_PASSWORD'),
         'HOST': 'felixbasinger.mysql.pythonanywhere-services.com',
         'OPTIONS': {
             'init_command': "SET NAMES 'utf8mb4';SET sql_mode='STRICT_TRANS_TABLES'",
